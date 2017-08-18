@@ -26,7 +26,7 @@ app.post('/receive-survey', (req, res) => {
   const { survey } = req.body
   const date = new Date()
   survey.date = date.getTime()
-  survey.host = req.headers.host
+  survey.ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress
 
   const rawFilePath = path.resolve(rawDir, `${date.getTime()}.json`)
   const surveyStr = JSON.stringify(survey)
@@ -35,4 +35,4 @@ app.post('/receive-survey', (req, res) => {
   })
 })
 
-const server = app.listen(3000);
+const server = app.listen(3000, '0.0.0.0');
