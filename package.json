@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "watchify index.js -o bundle.js  -t [ babelify --presets [ es2015 ] ] | live-server"
+    "client-dev": "watchify public/index.js -o public/bundle.js  -t [ babelify --presets [ es2015 ] ]"
   },
   "author": "",
   "license": "ISC",
@@ -16,7 +16,11 @@
     "watchify": "^3.9.0"
   },
   "dependencies": {
+    "body-parser": "^1.17.2",
+    "browser-request": "^0.3.3",
+    "express": "^4.15.4",
     "jquery": "^3.2.1",
+    "json2xls": "^0.1.2",
     "survey-jquery": "^0.12.22"
   }
 }
