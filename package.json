@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "client-dev": "watchify public/index.js -o public/bundle.js  -t [ babelify --presets [ es2015 ] ]"
+    "dev-client": "watchify public/index.js -o public/bundle.js  -t [ babelify --presets [ es2015 ] ]"
   },
   "author": "",
   "license": "ISC",
